@@ -1,3 +1,5 @@
+// servicesAdmin.js
+
 initAdminCrud({
   tableId: 'serviceTable',
   addButtonId: 'addServiceBtn',

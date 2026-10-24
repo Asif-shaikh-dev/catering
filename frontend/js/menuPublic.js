@@ -1,3 +1,5 @@
+// menuPublic.js
+
 // Quantity +/- on the public menu cards, and "Order Now" carries the dish into the booking form.
 (function () {
   document.querySelectorAll('.menu-card').forEach(function (card) {

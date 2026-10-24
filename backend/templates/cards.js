@@ -1,3 +1,4 @@
+// cards.js
 const { escapeHtml: esc, formatMoney } = require('../utils/format');
 
 function menuCardHtml(item) {

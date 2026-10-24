@@ -56,6 +56,7 @@ app.use('/', require('./backend/modules/bookings'));
 app.use('/', require('./backend/modules/payments'));
 app.use('/', require('./backend/modules/customers'));
 // app.use('/', require('./backend/modules/orders'));
+app.use('/',require('./backend/modules/orders'));
 
 // 404
 app.use((req, res) => {

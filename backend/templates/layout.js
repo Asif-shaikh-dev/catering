@@ -1,3 +1,4 @@
+// layout.js
 const { escapeHtml: esc } = require('../utils/format');
 
 const NAV_LINKS = [

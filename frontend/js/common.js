@@ -1,3 +1,4 @@
+// common.js
 // Shared helpers - loaded on every page before the page-specific script.
 
 async function apiRequest(url, method, body) {

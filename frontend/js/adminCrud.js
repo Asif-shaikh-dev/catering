@@ -1,3 +1,4 @@
+// Admincrud.js
 // Shared add / edit / delete logic for the admin Menu, Packages and Services tables.
 // Everything is saved to the database through the /api routes (the old version only changed the page).
 function initAdminCrud(config) {

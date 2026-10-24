@@ -1,3 +1,5 @@
+// menuAdmin.js
+
 initAdminCrud({
   tableId: 'menuTable',
   addButtonId: 'addMenuBtn',

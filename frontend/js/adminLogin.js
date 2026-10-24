@@ -1,3 +1,4 @@
+// adminLogin.js
 (function () {
   const form = document.getElementById('adminLoginForm');
   if (!form) return;

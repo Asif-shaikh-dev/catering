@@ -1,3 +1,4 @@
+// adminTable.js
 const { renderPage } = require('./layout');
 const { escapeHtml: esc } = require('../utils/format');
 

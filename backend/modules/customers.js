@@ -1,3 +1,4 @@
+// customers.js
 const express = require('express');
 const pool = require('../config/db');
 const { renderAdminTablePage } = require('../templates/adminTable');

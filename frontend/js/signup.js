@@ -1,3 +1,5 @@
+// signup.js
+
 (function () {
   const form = document.getElementById('signupForm');
   if (!form) return;

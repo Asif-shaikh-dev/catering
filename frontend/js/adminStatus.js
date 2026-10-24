@@ -1,3 +1,4 @@
+// adminStatus.js
 // Status dropdowns in the admin Bookings and Payments tables.
 document.addEventListener('change', async function (event) {
   const select = event.target.closest('.status-select');

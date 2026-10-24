@@ -1,3 +1,5 @@
+// itemdetails.js
+
 (function () {
   const info = document.querySelector('.item-details-info');
   if (!info) return;

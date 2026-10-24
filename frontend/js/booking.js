@@ -1,3 +1,5 @@
+// booking.js
+
 (function () {
   const form = document.getElementById('bookingForm');
   if (!form) return;

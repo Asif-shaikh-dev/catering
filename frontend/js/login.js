@@ -1,3 +1,5 @@
+// login.js
+
 (function () {
   const form = document.getElementById('loginForm');
   if (!form) return;

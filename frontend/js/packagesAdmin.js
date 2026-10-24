@@ -1,3 +1,5 @@
+// packagesAdmin.js
+
 initAdminCrud({
   tableId: 'packageTable',
   addButtonId: 'addPackageBtn',

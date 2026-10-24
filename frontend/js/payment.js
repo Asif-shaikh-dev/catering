@@ -1,3 +1,4 @@
+// payment.js
 (function () {
   const form = document.getElementById('paymentForm');
   if (!form) return;
