@@ -13,6 +13,7 @@ const NAV_LINKS = [
 const ADMIN_NAV_LINKS = [
   { href: '/admin/dashboard', label: 'Dashboard', key: 'dashboard' },
   { href: '/admin/bookings', label: 'Bookings', key: 'bookings' },
+  { href: '/admin/orders', label: 'Orders', key: 'orders' },
   { href: '/admin/customers', label: 'Customers', key: 'customers' },
   { href: '/admin/payments', label: 'Payments', key: 'payments' },
   { href: '/admin/menu', label: 'Menu', key: 'menu' },
@@ -42,6 +43,7 @@ function header({ activeKey = '', isAdmin = false, auth = null } = {}) {
       <a href="/booking" class="btn">Book Now</a>
       <div class="auth-links">
         <a href="/my-bookings">${esc(auth.name)}</a>
+        <a href="/my-orders">My Orders</a>
         <a href="/api/auth/logout" class="btn">Logout</a>
       </div>`;
   } else {
@@ -116,6 +118,7 @@ function renderPage({ title, activeKey = '', isAdmin = false, req = null, auth =
   <title>${esc(title)} - Catering Management System</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/fixes.css">
+  <link rel="stylesheet" href="/css/orders.css">
 </head>
 <body>
 ${header({ activeKey, isAdmin, auth: user })}

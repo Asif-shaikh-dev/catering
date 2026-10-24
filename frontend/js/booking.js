@@ -1,4 +1,4 @@
-// booking.js
+// booking.js  (event bookings only - single dish orders use /order)
 
 (function () {
   const form = document.getElementById('bookingForm');
@@ -13,13 +13,6 @@
   if (wantedPackage) {
     const select = document.getElementById('package');
     if ([...select.options].some((o) => o.value === wantedPackage)) select.value = wantedPackage;
-  }
-
-  // Pre-fill the requirements when coming from "Order Now" on the menu (?item=Paneer%20Tikka&qty=3)
-  const item = params.get('item');
-  if (item) {
-    const qty = parseInt(params.get('qty'), 10) || 1;
-    document.getElementById('message').value = 'Interested in: ' + item.slice(0, 120) + ' (x' + qty + ')';
   }
 
   // Pre-fill the logged-in customer's details (does nothing for guests: the API answers 401)

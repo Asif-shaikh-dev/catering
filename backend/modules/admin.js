@@ -56,7 +56,7 @@ router.get(
   '/admin/dashboard',
   requireAdmin,
   asyncHandler(async (req, res) => {
-    const [bookingCount, customerCount, paymentTotal, menuCount, recentBookings] = await Promise.all([
+    const [bookingCount, customerCount, paymentTotal, menuCount, recentBookings, orderCount] = await Promise.all([
       pool.query('SELECT COUNT(*)::int AS count FROM bookings'),
       pool.query('SELECT COUNT(*)::int AS count FROM customers'),
       pool.query("SELECT COALESCE(SUM(amount),0)::numeric AS total FROM payments WHERE status = 'Paid'"),
@@ -65,6 +65,8 @@ router.get(
         `SELECT b.id, b.name, b.event_type, b.event_date, b.status
          FROM bookings b ORDER BY b.created_at DESC LIMIT 5`
       ),
+      // Single-dish food orders live in their own table; never let a missing table break the dashboard
+      pool.query('SELECT COUNT(*)::int AS count FROM food_orders').catch(() => ({ rows: [{ count: 0 }] })),
     ]);
 
     const rowsHtml = recentBookings.rows.length
@@ -100,6 +102,11 @@ router.get(
           <a href="/admin/bookings">View Bookings →</a>
         </div>
         <div class="dashboard-card">
+          <div class="card-icon">🛒</div>
+          <div><p>Food Orders</p><h2>${orderCount.rows[0].count}</h2></div>
+          <a href="/admin/orders">View Orders →</a>
+        </div>
+        <div class="dashboard-card">
           <div class="card-icon">👥</div>
           <div><p>Total Customers</p><h2>${customerCount.rows[0].count}</h2></div>
           <a href="/admin/customers">View Customers →</a>
@@ -133,6 +140,7 @@ router.get(
         <div class="quick-actions">
           <h2>Quick Actions</h2>
           <a href="/admin/bookings">📋 Manage Bookings</a>
+          <a href="/admin/orders">🛒 Manage Food Orders</a>
           <a href="/admin/customers">👥 Manage Customers</a>
           <a href="/admin/payments">💳 Manage Payments</a>
           <a href="/admin/menu">🍽️ Manage Menu</a>

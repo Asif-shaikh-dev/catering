@@ -46,9 +46,9 @@ router.get(
     const cta = `
   <section class="booking-cta">
     <div class="cta-content">
-      <p>READY TO ORDER?</p>
+      <p>PLANNING AN EVENT?</p>
       <h2>Make Your Event Delicious</h2>
-      <p>Choose your favorite dishes and let us make your special occasion unforgettable.</p>
+      <p>Need food for a wedding, party or corporate event? Book our catering packages for large groups.</p>
       <a href="/booking" class="btn">Book Your Event</a>
     </div>
   </section>`;
@@ -91,7 +91,7 @@ router.get(
       <div class="item-details-image">
         <img src="/images/${encodeURIComponent(item.image || 'catering.jpg')}" alt="${esc(item.name)}">
       </div>
-      <div class="item-details-info" data-price="${Number(item.price)}" data-name="${esc(item.name)}">
+      <div class="item-details-info" data-id="${Number(item.id)}" data-price="${Number(item.price)}" data-name="${esc(item.name)}">
         <h1>${esc(item.name)}</h1>
         <p class="description">${esc(item.description || 'Delicious food prepared specially for your event.')}</p>
         <div class="item-price">Price: <span id="itemPrice">${formatMoney(item.price)}</span></div>
@@ -101,7 +101,7 @@ router.get(
           <button type="button" id="plusBtn">+</button>
         </div>
         <div class="item-total-price">Total: <span id="totalPrice">${formatMoney(item.price)}</span></div>
-        <a href="/booking?item=${encodeURIComponent(item.name)}&amp;qty=1" class="btn" id="orderBtn">Order Now</a>
+        <a href="/order?item=${Number(item.id)}&amp;qty=1" class="btn" id="orderBtn">Order Now</a>
         <br>
         <a href="/menu" class="back-btn">← Back to Menu</a>
       </div>

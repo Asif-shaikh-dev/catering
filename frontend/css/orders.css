@@ -1,0 +1,72 @@
+/* orders.css - single dish order page + order status colours */
+
+.order-summary .order-item-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .order-summary .order-description {
+    margin: 6px 0 18px;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+  
+  .order-qty-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .order-qty-box button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  
+  .order-qty-box button:hover {
+    background: #f3f3f3;
+  }
+  
+  .order-qty-box strong {
+    min-width: 24px;
+    text-align: center;
+  }
+  
+  .order-note {
+    font-size: 13px;
+    opacity: 0.75;
+    margin: 14px 0;
+  }
+  
+  .order-label {
+    display: block;
+    font-weight: 600;
+    margin: 14px 0 8px;
+  }
+  
+  /* order status colours (used on My Orders and the admin pages) */
+  .booking-status.placed,
+  .status.placed {
+    background: #e3f2fd;
+    color: #1565c0;
+  }
+  
+  .booking-status.preparing,
+  .status.preparing {
+    background: #fff3e0;
+    color: #e65100;
+  }
+  
+  .booking-status.delivered,
+  .status.delivered {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
