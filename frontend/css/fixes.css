@@ -1,0 +1,205 @@
+/* =====================================================================
+   fixes.css - loaded AFTER style.css. You can merge it into style.css later.
+   ===================================================================== */
+
+/* --- Hero: the dark overlay (.hero::before is position:absolute) had no positioned parent,
+       so it covered the wrong area of the page. --- */
+.hero {
+    position: relative;
+}
+
+/* --- Navigation: the "active" link had no style --- */
+.nav-links a.active {
+    color: #e67e22;
+}
+
+/* --- <button class="btn"> looked different from <a class="btn"> --- */
+button.btn {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* --- Messages under forms --- */
+.form-message {
+    margin-top: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#contactSuccess,
+#paymentSuccess {
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 5px;
+    background: #e8f5e9;
+}
+
+/* --- Menu cards --- */
+.menu-card > a {
+    display: block;
+}
+
+.menu-info h3 a {
+    color: inherit;
+}
+
+.menu-info h3 a:hover {
+    color: #e67e22;
+}
+
+/* the quantity number was inheriting the big orange price style from ".menu-bottom span" */
+.quantity-box .quantity,
+.quantity-box #quantity {
+    min-width: 28px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+}
+
+.order-btn:hover {
+    background: #cf6414;
+}
+
+.service-price {
+    margin-top: 10px;
+    color: #e67e22 !important;
+    font-weight: 700;
+}
+
+.service-card .btn {
+    margin-top: 15px;
+}
+
+/* --- Item details page (these classes had no CSS at all) --- */
+.item-details-section {
+    padding: 80px 8%;
+    background: #fff8f2;
+}
+
+.item-details-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.item-details-image img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+.item-details-info h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.item-details-info .description {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.item-price,
+.item-total-price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.item-price span,
+.item-total-price span {
+    color: #e67e22;
+}
+
+.item-details-info .quantity-box {
+    margin-bottom: 18px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 18px;
+    color: #e67e22;
+    font-weight: 600;
+}
+
+@media (max-width: 800px) {
+    .item-details-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .item-details-section {
+        padding: 50px 5%;
+    }
+
+    .item-details-image img {
+        height: 300px;
+    }
+}
+
+/* --- Admin buttons (had no colours) --- */
+.action-btn {
+    background: #eee;
+    color: #222;
+}
+
+.action-btn.edit-btn,
+.action-btn.edit-package,
+.action-btn.edit-service {
+    background: #e67e22;
+    color: #fff;
+}
+
+.action-btn.delete-btn {
+    background: #c0392b;
+    color: #fff;
+}
+
+.action-btn:hover {
+    opacity: 0.85;
+}
+
+/* --- Status badges / dropdowns --- */
+.status.cancelled,
+.booking-status.cancelled {
+    background: #f8d7da;
+}
+
+.booking-status.pending {
+    background: #fff3cd;
+}
+
+.status-select {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* --- Admin messages table: long text may wrap --- */
+.message-cell {
+    white-space: normal;
+    min-width: 260px;
+    max-width: 420px;
+}
+
+/* --- Payment page: select / hidden UPI box --- */
+.payment-form input[type="text"]:disabled {
+    background: #eee;
+}
