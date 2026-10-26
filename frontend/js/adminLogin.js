@@ -3,7 +3,7 @@
   const form = document.getElementById('adminLoginForm');
   if (!form) return;
   const message = document.getElementById('adminLoginMessage');
-
+   //
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
     const button = form.querySelector('button[type="submit"]');
